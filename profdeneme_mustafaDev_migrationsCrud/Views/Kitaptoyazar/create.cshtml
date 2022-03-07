@@ -1,0 +1,36 @@
+﻿@model profdeneme_mustafaDev_migrationsCrud.Models.kitaptoyazar
+
+@{
+    ViewData["Title"] = "create";
+}
+
+<h1>create</h1>
+
+<h4>kitaptoyazar</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="creatework">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="kitapf_id" class="control-label"></label>
+                <select asp-for="kitapf_id" class ="form-control" asp-items="ViewBag.kitapf_id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="yazarf_id" class="control-label"></label>
+                <select asp-for="yazarf_id" class ="form-control" asp-items="ViewBag.yazarf_id"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

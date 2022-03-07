@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table">
+<thead>
+    <tr>
+      <th scope="col">SİL</th>
+      <th scope="col">DÜZENLE</th>
+      <th scope="col">DETAYLAR</th>
+      <th scope="col">id</th>
+      <th scope="col">kitap adı</th>
+      <th scope="col">sayfa sayısı</th>
+      <th scope="col">kitap türü</th>
+    </tr>
+  </thead>
+  <tbody>
+
+            @{
+                using(var db=new mydbcontext())
+                {
+                    
+                    foreach (kitap item in db.kitap)
+                    {
+                        <tr>
+                        <td><a href="@Url.Action("sil",new {Id=item.id})">SİL</a></td>
+                        <td><a href="@Url.Action("duzenle",new {Id=item.id})">DÜZENLE</a></td>
+                        <td><a href="@Url.Action("detay",new {Id=item.id})">DETAYLAR</a></td>
+                        <td>@item.id</td>
+                        <td>@item.kitapadi</td>
+                        <td>@item.kitapsayfasi</td>
+                        <td>@item.kitapturu</td>
+                        
+                    </tr>
+                        
+                }
+ 
+           }
+}
+   
+  </tbody>
+</table>
+
+@ViewBag.kitapeklehata
+@ViewBag.duzenlehata

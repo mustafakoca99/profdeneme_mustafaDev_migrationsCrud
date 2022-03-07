@@ -1,0 +1,45 @@
+﻿@model profdeneme_mustafaDev_migrationsCrud.Models.yazar
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+<thead>
+    <tr>
+      <th scope="col">SİL</th>
+      <th scope="col">DÜZENLE</th>
+      <th scope="col">DETAYLAR</th>
+      <th scope="col">id</th>
+      <th scope="col">yazar adı</th>
+      <th scope="col">yazar yaşı</th>
+    </tr>
+  </thead>
+  <tbody>
+
+            @{
+                using(var db=new mydbcontext())
+                {
+                    
+                    foreach (yazar item in db.yazar)
+                    {
+                        <tr>
+                        <td><a href="@Url.Action("sil",new {Id=item.id})">SİL</a></td>
+                        <td><a href="@Url.Action("duzenle",new {Id=item.id})">DÜZENLE</a></td>
+                        <td><a href="@Url.Action("detay",new {Id=item.id})">DETAYLAR</a></td>
+                        <td>@item.id</td>
+                        <td>@item.yazaradi</td>
+                        <td>@item.yazaryasi</td>
+                        </tr>
+                        
+                }
+ 
+           }
+}
+   
+  </tbody>
+</table>
+
+@ViewBag.yazareklehata
+@ViewBag.duzenlehata

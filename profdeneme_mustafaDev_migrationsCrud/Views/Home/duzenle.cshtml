@@ -1,0 +1,44 @@
+﻿@model profdeneme_mustafaDev_migrationsCrud.Models.kitap
+
+@{
+    ViewData["Title"] = "duzenle";
+}
+
+<h1>duzenle</h1>
+
+<h4>kitap</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="duzenlework">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="kitapadi" class="control-label"></label>
+                <input asp-for="kitapadi" class="form-control" />
+                <span asp-validation-for="kitapadi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="kitapsayfasi" class="control-label"></label>
+                <input asp-for="kitapsayfasi" class="form-control" />
+                <span asp-validation-for="kitapsayfasi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="kitapturu" class="control-label"></label>
+                <input asp-for="kitapturu" class="form-control" />
+                <span asp-validation-for="kitapturu" class="text-danger"></span>
+            </div><br />
+            <div class="form-group">
+                <input type="submit" value="KAYDET" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">LİSTEYE GERİ DÖN</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
