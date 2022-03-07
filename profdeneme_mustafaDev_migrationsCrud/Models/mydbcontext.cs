@@ -5,7 +5,7 @@ namespace profdeneme_mustafaDev_migrationsCrud.Models
     public class mydbcontext : DbContext
     {
 
-        string dbconnection = "Server=.;Database=TestMustafa4;User Id=sa;Password=150609%M;MultipleActiveResultSets=true";
+        string dbconnection = "Server=.;Database=TestMustafa4;User Id=sa;Password=psw;MultipleActiveResultSets=true";
 
         public mydbcontext() { }
 
